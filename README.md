@@ -11,7 +11,7 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 
 ## 🎯 Objectives
 
-- Develop and apply a **7-level violence severity scale** (from Safe to Dangerous)
+- Develop and apply a **8-level violence severity scale** (from Safe to Dangerous)
 - Annotate real or simulated data with **semantic and syntactic context**
 - Assist in training LLMs to **distinguish safe vs harmful content**
 - Align with responsible AI use and OpenAI/Microsoft Azure content safety practices
@@ -22,11 +22,9 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 
 | File | Description |
 |------|-------------|
-| `examples/` | Visuals & sentence examples from the annotation guideline |
-| `annotation_schema.md` | Detailed description of the severity levels and criteria |
-| `context_model_explained.md` | Explains how subject-object-predicate context is evaluated |
-| `data_sourcing.md` | How sample data was gathered, cleaned, and annotated |
-| `tools_used.md` | Software and platforms used during annotation and analysis |
+| `README.md` | General description of what I do |
+| `Methodology Demonstration.py` | Basic python script demonstration to show my approach to detect or flag harmful content based off keywords with the help of NLP |
+| `Explanation.pdf` | Explains my python example in details |
 
 ---
 
@@ -51,6 +49,7 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 - Microsoft Excel (manual annotation)
 - GPT-based AI tools (moderation context training)
 - Azure OpenAI services (for production integration)
+- Python
 
 ---
 
@@ -64,8 +63,9 @@ You may use, share, and adapt the content, but please give appropriate credit.
 ## 🛡️ Disclaimer
 
 This repository is a semi-practical and illustrative project based on the methods I used from previous work experience.  
-None of the confidential information or data will be shown here. Everything is reconstructed or simulated.  
+None of the confidential information or data will be shown here. Everything is either reconstructed or simulated.  
 This reflects my personal understanding and work process only.
+And Did i use AI for this? 100% yes, but just for refining and helping me with python grammar.
 
 ## 🙋 About Me
 
