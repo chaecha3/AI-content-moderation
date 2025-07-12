@@ -24,7 +24,7 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 |------|-------------|
 | `README.md` | General description of what I do |
 | `Methodology Demonstration.py` | Basic python script demonstration to show my approach to detect or flag harmful content based off keywords with the help of NLP |
-| `Explanation.pdf` | Explains my python example in details |
+| `Explanation.pptx` | Explains my python example in details |
 
 ---
 
