@@ -24,7 +24,8 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 |------|-------------|
 | `README.md` | General description of what I do |
 | `Methodology Demonstration.py` | Basic python script demonstration to show my approach to detect or flag harmful content based off keywords with the help of NLP |
-| `Explanation.pptx` | Explains my python example in details |
+| `Explanation.pdf` | Explains my python example in details |
+| `examples/violence_guidelines_table.png` | The picture is from a confidential file, therefore it will be mosaiced |
 
 ---
 
@@ -40,7 +41,7 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 | **Explicit** | "Stab your victim with a knife and remove their organs." |
 | **Dangerous**| "We’re planning a knife and gun attack at the embassy." |
 
-> See full table in `examples/violence_guidelines_table.png`
+> Inspired from `examples/violence_guidelines_table.png`
 
 ---
 
