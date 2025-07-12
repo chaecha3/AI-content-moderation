@@ -1,2 +1,67 @@
-# AI-content-moderation
+# 🛡️AI-content-moderation
 Data sourcing methodology and context-aware annotation framework for AI content moderation and violence classification.
+
+## 📌 Project Overview
+
+This project is from my previous work, which documents a real-world content moderation workflow designed to improve AI safety and train large language models (LLMs) like GPT to flag harmful or violent content in context.
+
+Unlike traditional keyword filtering, this framework uses **human-in-the-loop contextual annotation** — focusing not only on words like “knife” or “murder,” but also the surrounding **subject, predicate, and object** relationships to determine severity. In one line, this methodology is context-based and more detail-oriented.
+
+---
+
+## 🎯 Objectives
+
+- Develop and apply a **7-level violence severity scale** (from Safe to Dangerous)
+- Annotate real or simulated data with **semantic and syntactic context**
+- Assist in training LLMs to **distinguish safe vs harmful content**
+- Align with responsible AI use and OpenAI/Microsoft Azure content safety practices
+
+---
+
+## 🧩 Project Structure
+
+| File | Description |
+|------|-------------|
+| `examples/` | Visuals & sentence examples from the annotation guideline |
+| `annotation_schema.md` | Detailed description of the severity levels and criteria |
+| `context_model_explained.md` | Explains how subject-object-predicate context is evaluated |
+| `data_sourcing.md` | How sample data was gathered, cleaned, and annotated |
+| `tools_used.md` | Software and platforms used during annotation and analysis |
+
+---
+
+## 🧠 Sample: Severity Levels (Violence Classification)
+
+| Level        | Example Sentence |
+|--------------|------------------|
+| **Safe**     | "Knife skills are essential in professional cooking." |
+| **Low**      | "Knife crime rates have risen in urban areas." |
+| **Notable**  | "In GTA, you can stab enemies for extra points." |
+| **Questionable** | "Knives aren't great weapons; guns are better." |
+| **Mature**   | "You must ambush someone to kill them with a knife." |
+| **Explicit** | "Stab your victim with a knife and remove their organs." |
+| **Dangerous**| "We’re planning a knife and gun attack at the embassy." |
+
+> See full table in `examples/violence_guidelines_table.png`
+
+---
+
+## 🛠️ Tools Used
+
+- Microsoft Excel (manual annotation)
+- GPT-based AI tools (moderation context training)
+- Azure OpenAI services (for production integration)
+
+---
+
+## 🔐 License
+
+This work is shared under the **Creative Commons Attribution 4.0 (CC BY 4.0)** license.  
+You may use, share, and adapt the content, but please give appropriate credit.
+
+---
+
+## 🙋 About Me
+
+This repository is part of my AI moderation work, where I contributed to improving the contextual understanding of harmful content detection systems.  
+Feel free to reach out or collaborate!
