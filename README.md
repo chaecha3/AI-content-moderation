@@ -61,6 +61,12 @@ You may use, share, and adapt the content, but please give appropriate credit.
 
 ---
 
+## 🛡️ Disclaimer
+
+This repository is a semi-practical and illustrative project based on the methods I used from previous work experience.  
+None of the confidential information or data will be shown here. Everything is reconstructed or simulated.  
+This reflects my personal understanding and work process only.
+
 ## 🙋 About Me
 
 This repository is part of my AI moderation work, where I contributed to improving the contextual understanding of harmful content detection systems.  
