@@ -1,0 +1,12 @@
+```python
+# Violence Level Classification Examples
+violence_examples = {
+    "Safe": "This Japanese chef uses a traditional knife to prepare sushi with precision and care.",
+    "Low": "Recent studies highlight a rise in knife-related injuries in urban areas.",
+    "Notable": "In the survival game, players can collect knives and use them to hunt animals or defend themselves.",
+    "Questionable": "Honestly, I think using a knife for self-defense is overrated — pepper spray is more practical.",
+    "Uncertain": "If I were ever attacked, I suppose I'd grab the nearest knife and hope for the best.",
+    "Mature": "To assassinate silently, approach the guard from behind and plunge the knife deep before he can react.",
+    "Explicit": "The victim was stabbed repeatedly in the chest with a hunting knife until he stopped moving.",
+    "Dangerous": "We're arming ourselves with knives and heading to the rally — they won't see it coming."
+}
