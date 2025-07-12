@@ -1,4 +1,14 @@
-# scripts/violence_classifier.py
+# scripts/Methodology Demonstration.py
+
+"""
+Methodology Demonstration
+-------------------------
+This script demonstrates a hybrid approach for classifying potentially harmful or violent text content:
+1. Rule-based keyword matching (default)
+2. Contextual NLP-based matching using spaCy (--mode=nlp)
+
+Author: [Qiuyu Lu]
+"""
 
 # Example sentences representing each violence severity level
 violence_examples = {
@@ -12,7 +22,7 @@ violence_examples = {
     "Dangerous": "We're arming ourselves with knives and heading to the rally — they won't see it coming."
 }
 
-# Keywords associated with each violence level
+# Keywords associated with each violence level, which is also an example
 violence_keywords = {
     "Dangerous": ["attack", "bomb", "shoot", "kill", "knife", "gun", "plotting"],
     "Explicit": ["stabbed", "blood", "knife", "victim", "eviscerate"],
@@ -24,8 +34,12 @@ violence_keywords = {
     "Safe": ["knife skills", "cooking", "sushi"]
 }
 
-# Classify a sentence based on the first matching keyword
+# Here comes the hybrid approach that I used in my previous work experience
+
 def classify_sentence(sentence):
+    """
+    Classifies a sentence based on rule-based keyword matching.
+    """
     sentence = sentence.lower()
     for level, keywords in violence_keywords.items():
         for keyword in keywords:
@@ -33,31 +47,67 @@ def classify_sentence(sentence):
                 return level
     return "Unknown"
 
-# Example sentences to test classification (you can modify or expand this list)
-test_sentences = [
-    "Knife skills are important in Japanese cooking.",
-    "We are planning a knife and bomb attack at the event.",
-    "Try to stab him with a hunting knife in GTA.",
-    "Knives aren’t good weapons — guns are better.",
-    "I just bought a new kitchen knife.",
-    "If I had to, I’d stab someone in self-defense.",
-    "We're plotting an attack with bombs and knives.",
-    "She was stabbed twelve times in the chest."
-]
+def classify_sentence_nlp(sentence):
+    """
+    Classifies a sentence using spaCy NLP for context-aware detection.
+    Requires spaCy and the English model installed.
+    """
+    try:
+        import spacy
+    except ImportError:
+        print("spaCy is not installed. To use NLP mode, run:")
+        print("pip install spacy && python -m spacy download en_core_web_sm")
+        return "Unknown"
+    nlp = spacy.load("en_core_web_sm")
 
-# Print classification results for each test sentence
-print("🔍 Violence Classification Results:\n")
-for sentence in test_sentences:
-    level = classify_sentence(sentence)
-    print(f"📝 \"{sentence}\" → Classified as: **{level}**")
+    violent_verbs = {"stab", "kill", "murder", "attack", "assassinate", "shoot", "harm", "hurt"}
+    weapons = {"knife", "gun", "bomb", "weapon", "rifle", "explosive", "pistol", "blade"}
 
-import sys
+    doc = nlp(sentence.lower())
 
-if len(sys.argv) > 1:
-    input_sentence = " ".join(sys.argv[1:])
-    result = classify_sentence(input_sentence)
-    print(f"\n📝 \"{input_sentence}\" → Classified as: **{result}**")
-else:
-    print("⚠️ No sentence provided. Example usage:")
-    print("    python \"Methodology Demonstration.py\" \"He stabbed someone with a knife.\"")
+    verbs = {token.lemma_ for token in doc if token.pos_ == "VERB"}
+    nouns = {token.text for token in doc if token.pos_ == "NOUN"}
 
+    if verbs & violent_verbs and nouns & weapons:
+        return "Dangerous"
+    elif verbs & violent_verbs:
+        return "Explicit"
+    elif nouns & weapons:
+        return "Questionable"
+    else:
+        return "Safe"
+
+if __name__ == "__main__":
+    import sys
+
+    # Always print demo with the example test sentences
+    test_sentences = [
+        "Knife skills are important in Japanese cooking.",
+        "We are planning a knife and bomb attack at the event.",
+        "Try to stab him with a hunting knife in GTA.",
+        "Knives aren’t good weapons — guns are better.",
+        "I just bought a new kitchen knife.",
+        "If I had to, I’d stab someone in self-defense.",
+        "We're plotting an attack with bombs and knives.",
+        "She was stabbed twelve times in the chest."
+    ]
+    print("🔍 Violence Classification Results (Rule-based):\n")
+    for sentence in test_sentences:
+        level = classify_sentence(sentence)
+        print(f"📝 \"{sentence}\" → Classified as: **{level}**")
+
+    # Now check if the user provided a sentence to classify
+    if len(sys.argv) > 1:
+        # Support NLP mode via --mode=nlp
+        if "--mode=nlp" in sys.argv:
+            input_sentence = " ".join(arg for arg in sys.argv[1:] if not arg.startswith("--"))
+            result = classify_sentence_nlp(input_sentence)
+            print(f"\n📝 (NLP Mode) \"{input_sentence}\" → Classified as: **{result}**")
+        else:
+            input_sentence = " ".join(arg for arg in sys.argv[1:] if not arg.startswith("--"))
+            result = classify_sentence(input_sentence)
+            print(f"\n📝 (Rule Mode) \"{input_sentence}\" → Classified as: **{result}**")
+    else:
+        print("\n⚠️ No sentence provided. Example usage:")
+        print("    python \"Methodology Demonstration.py\" \"He stabbed someone with a knife.\"")
+        print("    python \"Methodology Demonstration.py\" \"He stabbed someone with a knife.\" --mode=nlp")
