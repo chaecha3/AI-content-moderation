@@ -56,15 +56,14 @@ Unlike traditional keyword filtering, this framework uses **human-in-the-loop co
 
 ## 🔐 License
 
-This work is shared under the **Creative Commons Attribution 4.0 (CC BY 4.0)** license.  
-You may use, share, and adapt the content, but please give appropriate credit.
+Sharing this work is generally not allowed as this work is only for career-pursuing purposes.
 
 ---
 
 ## 🛡️ Disclaimer
 
 This repository is a semi-practical and illustrative project based on the methods I used from previous work experience.  
-None of the confidential information or data will be shown here. Everything is either reconstructed or simulated.  
+Almost no confidential information or data will be shown here. My experience from my previous work will be reconstructed or simulated.  
 This reflects my personal understanding and work process only.
 And Did i use AI for this? 100% yes, but just for refining and helping me with python grammar.
 
