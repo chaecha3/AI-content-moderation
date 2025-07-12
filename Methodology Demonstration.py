@@ -50,3 +50,14 @@ print("🔍 Violence Classification Results:\n")
 for sentence in test_sentences:
     level = classify_sentence(sentence)
     print(f"📝 \"{sentence}\" → Classified as: **{level}**")
+
+import sys
+
+if len(sys.argv) > 1:
+    input_sentence = " ".join(sys.argv[1:])
+    result = classify_sentence(input_sentence)
+    print(f"\n📝 \"{input_sentence}\" → Classified as: **{result}**")
+else:
+    print("⚠️ No sentence provided. Example usage:")
+    print("    python \"Methodology Demonstration.py\" \"He stabbed someone with a knife.\"")
+
