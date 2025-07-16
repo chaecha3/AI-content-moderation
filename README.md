@@ -3,7 +3,7 @@ Data sourcing methodology and context-aware annotation framework for AI content 
 
 ## 📌 Project Overview
 
-This project is a reconstruction from my previous work, which simulates a real-world content moderation workflow designed to improve AI safety and train large language models (LLMs) like GPT to flag harmful or violent content in context based on my previous work experience.
+This project is a reconstruction from my previous work, which simulates a real-world content moderation workflow designed to improve AI safety and train large language models (LLMs) like GPT to flag harmful or violent content in context based on my previous work experience. With that being said, this work reveals no confidential information of my previous work and is therefore only inspired by it.
 
 Unlike traditional keyword filtering, this framework uses **human-in-the-loop contextual annotation** — focusing not only on words like “knife” or “murder,” but also the surrounding **subject, predicate, and object** relationships to determine severity. In one line, this methodology is context-based and more detail-oriented.
 
